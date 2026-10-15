@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avni | Software Developer</title>
+  <meta name="description" content="Avni builds Android apps and web projects, and is learning cyber security and AI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="top">
+    <a class="logo" href="#top">Avni</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-text">
+        <h1>Hi, I'm Avni.</h1>
+        <p>I build apps that help people get started. Android and web today, with cyber security and AI next.</p>
+        <div class="actions">
+          <a class="btn" href="#projects">See my projects</a>
+          <a class="btn ghost" href="https://github.com/akira-616" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/avni-gupta-7ab047369/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="eclipse" role="img" aria-label="A solar eclipse, the colour theme of my Codes N Caves app"></div>
+    </section>
+
+    <section class="band" id="about">
+      <h2>About</h2>
+      <div class="band-body about">
+        <img src="profile.jpg" alt="Portrait of Avni" class="profile-img" onerror="this.remove()">
+        <div>
+          <p>I'm a developer who likes building tools for people who are just starting out. My app Codes N Caves came from asking where a new programmer should even begin.</p>
+          <p>I work in Kotlin and the web, and I'm putting more of my time into cyber security and AI.</p>
+          <p><em>ADD A PERSONAL LINE: what you're studying, what you do outside code, what you want to build next.</em></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="skills">
+      <h2>Skills</h2>
+      <div class="band-body skills">
+        <h3>Building with</h3>
+        <ul class="chips"><li>Kotlin</li><li>Jetpack Compose</li><li>Android</li><li>HTML</li><li>CSS</li><li>Git &amp; GitHub</li></ul>
+        <h3>Learning</h3>
+        <ul class="chips soft"><li>Cyber security</li><li>Artificial intelligence</li><li>Machine learning</li></ul>
+      </div>
+    </section>
+
+    <section class="band" id="projects">
+      <h2>Projects</h2>
+      <div class="band-body">
+        <a class="project" href="https://github.com/akira-616/CodesnCaves" target="_blank" rel="noopener">
+          <h3>Codes N Caves</h3>
+          <p>An Android app that shows new programmers where to start. It has ten learning modules, weekly timed contests, a leaderboard, and a profile with a GitHub-style activity grid.</p>
+          <span class="stack">Kotlin, Jetpack Compose</span>
+        </a>
+        <a class="project" href="https://github.com/akira-616/CleanLoop-Rural" target="_blank" rel="noopener">
+          <h3>CleanLoop Rural</h3>
+          <p><em>DESCRIPTION: one or two sentences on what it does and who it helps.</em></p>
+          <span class="stack">TECH STACK</span>
+        </a>
+        <a class="project" href="https://github.com/akira-616/plms-portal" target="_blank" rel="noopener">
+          <h3>PLMS Portal</h3>
+          <p><em>DESCRIPTION: one or two sentences on what it does and who it helps.</em></p>
+          <span class="stack">TECH STACK</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Contact</h2>
+      <div class="band-body">
+        <p class="lead">Have a question or a project idea? Send me a message and it will land in my inbox.</p>
+        <!-- Replace YOUR_EMAIL in BOTH places below. The first message you receive asks you to confirm the address once. -->
+        <form id="form" action="https://formsubmit.co/YOUR_EMAIL" method="POST">
+          <input type="hidden" name="_subject" value="New message from your portfolio">
+          <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <button type="submit">Send message</button>
+          <p id="status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Avni &middot;
+      <a href="https://github.com/akira-616" target="_blank" rel="noopener">GitHub</a> &middot;
+      <a href="https://www.linkedin.com/in/avni-gupta-7ab047369/" target="_blank" rel="noopener">LinkedIn</a></p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('form'), status = document.getElementById('status');
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      status.textContent = 'Sending...';
+      try {
+        const r = await fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+          method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form)
+        });
+        if (!r.ok) throw 0;
+        form.reset();
+        status.textContent = 'Thanks! Your message is on its way.';
+      } catch {
+        status.textContent = 'Message not sent. Please check your connection and try again.';
+      }
+    });
+  </script>
+</body>
+</html>
